@@ -1,0 +1,51 @@
+﻿# 1. 【核心】屏蔽所有文件！
+*
+
+# 2. 【特赦】允许文件夹结构
+!*/
+
+# 3. 【特赦】只允许以下代码后缀 (白名单)
+!*.py
+!*.ipynb
+!*.java
+!*.c
+!*.cpp
+!*.h
+!*.cs
+!*.go
+!*.mod
+!*.md
+!*.markdown
+!*.pdf
+!*.docx
+!*.doc
+!*.txt
+!*.xml
+!*.xaml
+!*.ini
+!*.html
+!*.css
+!*.js
+!*.json
+!*.yaml
+!*.yml
+!requirements.txt
+!.gitignore
+!LICENSE
+!README.md
+
+# 4. 【补丁】虽然允许了 .zip 和 .json，但必须把大的再次屏蔽
+bs2/**/code.json
+**/code.json
+*.zip
+*.tar.gz
+*.rar
+
+# 5. 【双重保险】再次明确屏蔽所有视频和模型
+*.mp4
+*.avi
+*.mov
+*.pt
+*.pth
+*.onnx
+*.weights
