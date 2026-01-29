@@ -1,8 +1,82 @@
 <!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2A9 | Hello</title>
+    <style>
+        /* --- 核心布局 --- */
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background-color: #ffffff;
+            color: #1d1d1f;
+            font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace; /* 使用代码字体 */
+            transition: background-color 0.3s, color 0.3s;
+        }
 
-<h1>Hello, I'm 2A9!</h1>
-<h1>你好, 我是2A9!</h1>
-<h1>Hallo, ich bin 2A9!</h1>
-<h1>Bonjour, je suis 2A9!</h1>
+        /* --- 深色模式支持 --- */
+        @media (prefers-color-scheme: dark) {
+            body {
+                background-color: #0d1117; /* GitHub 深色背景 */
+                color: #c9d1d9;
+            }
+        }
 
+        /* --- 标题样式 --- */
+        .container {
+            text-align: left; /* 打字机效果通常靠左 */
+        }
+
+        h1 {
+            margin: 15px 0;
+            font-size: 2rem;
+            font-weight: normal;
+            opacity: 0; /* 初始隐藏 */
+            animation: fadeIn 0.5s forwards; /* 执行淡入动画 */
+        }
+
+        /* --- 动画延迟设置：让文字一行行出来 --- */
+        h1:nth-child(1) { animation-delay: 0.2s; }
+        h1:nth-child(2) { animation-delay: 0.8s; }
+        h1:nth-child(3) { animation-delay: 1.4s; }
+        h1:nth-child(4) { animation-delay: 2.0s; }
+
+        /* --- 名字链接样式 --- */
+        .name {
+            color: #0969da; /* GitHub 蓝 */
+            text-decoration: none;
+            font-weight: bold;
+            border-bottom: 2px solid transparent;
+            transition: border-bottom 0.3s;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            .name { color: #58a6ff; } /* 深色模式下的蓝 */
+        }
+
+        .name:hover {
+            border-bottom: 2px solid currentColor; /* 鼠标悬停加下划线 */
+            cursor: pointer;
+        }
+
+        /* --- 定义动画关键帧 --- */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>> 你好, 我是 <a href="https://github.com/X-for" class="name">2A9</a>!</h1>
+        <h1>> Hello, I'm <a href="https://github.com/X-for" class="name">2A9</a>!</h1>
+        <h1>> Hallo, ich bin <a href="https://github.com/X-for" class="name">2A9</a>!</h1>
+        <h1>> Bonjour, je suis <a href="https://github.com/X-for" class="name">2A9</a>!</h1>
+    </div>
+</body>
 </html>
